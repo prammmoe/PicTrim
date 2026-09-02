@@ -1,92 +1,65 @@
 # PicTrim
 
-**PicTrim** adalah aplikasi Android untuk menyiapkan gambar agar lebih ringan dan siap dibagikan—langsung di perangkat Anda. Kompres, ubah ukuran, crop, pilih format keluaran, lalu simpan atau bagikan hasilnya tanpa mengunggah foto ke server.
+**PicTrim** is an Android app for preparing smaller, share-ready images—entirely on your device. Compress, resize, crop, choose an output format, then save or share the result without uploading your photos to a server.
 
-> Privasi lebih sederhana: gambar diproses secara lokal dan tidak pernah meninggalkan ponsel Anda.
+<p align="center">
+  <img src="assets/pictrim-demo.gif" alt="PicTrim app demo" width="320" />
+</p>
 
-## Fitur
+> Privacy made simple: your images are processed locally and never leave your phone.
 
-- Kompres gambar dengan pengaturan kualitas dan target ukuran file perkiraan.
-- Ubah ukuran berdasarkan dimensi atau persentase, sambil menjaga rasio aspek.
-- Crop tengah dengan preset **Original**, **1:1**, **4:5**, **9:16**, dan **16:9**.
-- Ekspor sebagai **JPG**, **PNG**, atau **WebP**—atau pertahankan format asal.
-- Hapus metadata EXIF, termasuk informasi GPS, kamera, dan tanggal, bila diperlukan.
-- Proses hingga **50 gambar** dalam satu batch dengan progres di notifikasi.
-- Bandingkan ukuran dan dimensi gambar asli dengan hasil pemrosesan sebelum menyimpan.
-- Simpan ke `Pictures/PicTrim`, buka langsung di galeri, atau bagikan hasilnya.
-- Antarmuka tersedia dalam Bahasa Inggris dan Bahasa Indonesia.
+## Features
 
-## Teknologi
+- Compress images with adjustable quality and an approximate target file size.
+- Resize by dimensions or percentage while preserving the aspect ratio.
+- Center-crop with **Original**, **1:1**, **4:5**, **9:16**, and **16:9** presets.
+- Export as **JPG**, **PNG**, or **WebP**, or keep the original format.
+- Remove EXIF metadata—including GPS, camera, and date information—when needed.
+- Process up to **50 images** in one batch, with progress shown in a notification.
+- Compare the original image's size and dimensions with the processed result before saving.
+- Save to `Pictures/PicTrim`, open the result in the gallery, or share it directly.
+- Available in English and Indonesian.
 
-- Kotlin dan Jetpack Compose (Material 3)
-- Hilt untuk dependency injection
-- WorkManager untuk pemrosesan batch di latar belakang
-- Android Photo Picker, MediaStore, dan FileProvider
-- Coil untuk menampilkan pratinjau gambar
-- Preferences DataStore untuk status onboarding
+## Built with
 
-## Menjalankan proyek
+- Kotlin and Jetpack Compose (Material 3)
+- Hilt for dependency injection
+- WorkManager for background batch processing
+- Android Photo Picker, MediaStore, and FileProvider
+- Coil for image previews
+- Preferences DataStore for onboarding state
 
-### Prasyarat
+## How it works
 
-- Android Studio versi terbaru dengan dukungan Android Gradle Plugin 9.3.1
-- JDK 17
-- Android SDK Platform 37
-- Perangkat atau emulator Android dengan API level 23 (Android 6.0) atau lebih baru
+1. Choose one image or several images from your gallery.
+2. Set the processing mode: compress, resize, or both.
+3. Choose quality, dimensions, output format, crop, and metadata settings.
+4. Process the image and review the comparison.
+5. Save it to your gallery or share it directly.
 
-### Build
+For batch processing, PicTrim applies the same settings to every selected image and processes them sequentially to keep memory use manageable.
 
-```bash
-git clone https://github.com/prammmoe/PicTrim.git
-cd PicTrim
-./gradlew assembleDebug
-```
+## Privacy and storage
 
-APK debug akan tersedia di:
+- PicTrim processes images on-device; no upload service or account is required.
+- Batch outputs remain private temporary files until you choose to save them.
+- Saved images are added to `Pictures/PicTrim` through MediaStore.
+- When **Remove metadata** is enabled, EXIF data such as GPS, camera, and date information is removed. This setting alone does not alter image pixels.
 
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
-
-Untuk menjalankan pengujian unit:
-
-```bash
-./gradlew testDebugUnitTest
-```
-
-Atau buka folder proyek ini melalui Android Studio, tunggu sinkronisasi Gradle selesai, kemudian jalankan konfigurasi `app` pada perangkat/emulator Anda.
-
-## Cara kerja
-
-1. Pilih satu gambar atau beberapa gambar dari galeri.
-2. Atur mode pemrosesan: kompres, resize, atau keduanya.
-3. Pilih kualitas, ukuran, format keluaran, crop, dan opsi metadata.
-4. Proses gambar dan periksa perbandingan hasilnya.
-5. Simpan ke galeri atau bagikan langsung.
-
-Untuk batch, PicTrim menerapkan satu set pengaturan yang sama pada semua gambar terpilih dan memprosesnya secara berurutan agar penggunaan memori tetap terjaga.
-
-## Catatan privasi dan penyimpanan
-
-- PicTrim memproses gambar di perangkat; tidak ada layanan unggah atau akun yang diperlukan.
-- Hasil sementara batch disimpan secara privat hingga Anda memilih untuk menyimpannya.
-- Gambar yang disimpan akan ditempatkan di folder `Pictures/PicTrim` melalui MediaStore.
-- Saat opsi **Remove metadata** aktif, data EXIF seperti GPS, informasi kamera, dan tanggal dihilangkan; piksel gambar tidak diubah oleh opsi ini sendiri.
-
-## Struktur proyek
+## Project structure
 
 ```text
 app/src/main/java/com/prammmoe/pictrim/
-├── data/       # Implementasi Android: pemrosesan bitmap, MediaStore, dan batch
-├── di/         # Modul dependency injection Hilt
-├── domain/     # Model, aturan pemrosesan, repository, dan use case
-└── ui/         # Layar Compose, ViewModel, komponen, dan tema
+├── data/       # Android implementation: bitmap processing, MediaStore, and batches
+├── di/         # Hilt dependency-injection module
+├── domain/     # Models, processing rules, repository, and use cases
+└── ui/         # Compose screens, ViewModels, components, and theme
 ```
 
-## Dukungan format
+## Format support
 
-PicTrim menerima gambar yang dapat dibaca Android dan secara eksplisit mendukung keluaran JPG, PNG, serta WebP. Orientasi EXIF diterapkan sebelum gambar diproses agar hasilnya memiliki arah yang benar.
+PicTrim accepts images Android can decode and explicitly supports JPG, PNG, and WebP output. EXIF orientation is applied before processing so the exported image maintains the correct orientation.
 
-## Lisensi
+## License
 
-Hak cipta © 2026 Pramuditha Muhammad Ikhwan. Repository ini tersedia untuk portofolio, pembelajaran, dan referensi. Penggunaan ulang, redistribusi, fork publik, maupun penggunaan komersial memerlukan izin tertulis dari pemegang hak cipta. Lihat [LICENSE.md](LICENSE.md) untuk ketentuan lengkap.
+Copyright © 2026 Pramuditha Muhammad Ikhwan. This repository is available for portfolio, educational, and reference purposes. Reuse, redistribution, public forks, and commercial use require written permission from the copyright holder. See [LICENSE.md](LICENSE.md) for the full terms.
