@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">PicTrim</string>
+    <string name="choose_image">Choose image</string>
+    <string name="offline_notice">Your images stay on your device.</string>
+    <string name="onboarding_compress_title">Make photos lighter.</string>
+    <string name="onboarding_compress_body">Compress images in seconds while keeping the details that matter.</string>
+    <string name="onboarding_resize_title">Resize with control.</string>
+    <string name="onboarding_resize_body">Choose the dimensions, format, crop and quality that fit your next share.</string>
+    <string name="onboarding_private_title">Private by design.</string>
+    <string name="onboarding_private_body">Your photos are processed on this device. Nothing is uploaded.</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_back">Back</string>
+    <string name="home_eyebrow">LOCAL IMAGE TOOL</string>
+    <string name="home_title">Trim the size, not the quality.</string>
+    <string name="home_description">A focused workspace for smaller, share-ready images.</string>
+    <string name="home_single_title">One photo</string>
+    <string name="home_single_description">Compress, resize, and export one image.</string>
+    <string name="home_batch_title">Batch processing</string>
+    <string name="home_batch_description">Apply one setup to up to 50 images.</string>
+    <string name="home_private_title">On-device</string>
+    <string name="home_private_description">Your images never leave your phone.</string>
+    <string name="choose_images_batch">Choose images (batch)</string>
+    <string name="preview_title">Photo details</string>
+    <string name="preview_choose_mode">What do you want to do?</string>
+    <string name="mode_compress">Compress</string>
+    <string name="mode_compress_description">Make the file smaller.</string>
+    <string name="mode_resize">Resize</string>
+    <string name="mode_resize_description">Change image dimensions.</string>
+    <string name="mode_both">Compress &amp; resize</string>
+    <string name="mode_both_description">Prepare a lighter image at a new size.</string>
+    <string name="editor_resize_title">Resize image</string>
+    <string name="editor_process_title">Prepare image</string>
+    <string name="editor_compression">Compression</string>
+    <string name="editor_resize">Resize</string>
+    <string name="editor_output">Output format</string>
+    <string name="editor_crop">Center crop</string>
+    <string name="editor_privacy">Privacy</string>
+    <string name="editor_process">Process image</string>
+    <string name="quality_high">High</string><string name="quality_balanced">Balanced</string><string name="quality_small">Small</string><string name="quality_maximum">Maximum</string>
+    <string name="quality_value">Quality: %1$d%%</string>
+    <string name="target_size">Target size (KB, approximate)</string>
+    <string name="target_size_supporting">Available for JPG and WebP output</string>
+    <string name="width">Width</string><string name="height">Height</string><string name="keep_aspect">Keep aspect ratio</string><string name="remove_metadata">Remove metadata</string>
+    <string name="png_transparency_warning">PNG transparency will be removed when converting to JPG.</string>
+    <string name="batch_processing">Batch processing</string><string name="batch_choose">Choose images</string><string name="batch_process">Process %1$d images</string><string name="batch_result">Batch result</string>
+    <string name="result_title">Your result</string><string name="result_original">Original</string><string name="result_pictrim">PicTrim result</string><string name="result_saved">Saved %1$d%%</string><string name="result_larger">Output is larger than original</string><string name="result_saved_location">Saved to Pictures/PicTrim</string><string name="result_save">Save to gallery</string><string name="result_saved_button">Saved</string><string name="result_show_gallery">Show in gallery</string><string name="result_share">Share</string><string name="result_another">Process another image</string>
+    <string name="try_again">Try again</string><string name="processed_count">%1$d / %2$d processed</string><string name="save_all">Save all</string><string name="saved_count">Saved %1$d images</string><string name="open_gallery">Open gallery</string>
+</resources>
